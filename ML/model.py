@@ -76,6 +76,3 @@ print("Accuracy:", f"{accuracy*100:.2f}%")
 # Save the trained model using Pickle
 model_filename = current_directory + '/ML/crop_prediction_model.pkl'
 pickle.dump(clf, open(model_filename, 'wb'))
-
-
-
