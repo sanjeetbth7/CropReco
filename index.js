@@ -42,6 +42,13 @@ app.get("/", async (req, res) => {
     } 
 });
 
+app.get("/userManual", (req,res)=>{
+    res.render("userManual");
+})
+
+app.get("/about", (req,res)=>{
+    res.render("about");
+})
 
 app.get("/crop", (req,res)=>{
     res.render("crop",{prediction:" ",userValues:""});
@@ -52,14 +59,10 @@ app.get("/crop", (req,res)=>{
 
 // Define the route to handle the prediction
 app.post('/predict', (req, res) => {
-    // Assuming the request body contains user input data
     const cropDetails = req.body;
-    
     const userValues = [cropDetails.N,cropDetails.P,cropDetails.K,cropDetails.pH,cropDetails.rainfall,cropDetails.temperature]
 
 
-
-    // console.log(userValues)
     // Spawn a Python child process
     // const pythonProcess = spawn('python', [__dirname+'/ML/modelRes.py', JSON.stringify(userValues)]); // For GausianNB
     const pythonProcess = spawn('python', [__dirname+'/ML/modelResXGB.py', JSON.stringify(userValues)]); // For xgboost
@@ -74,11 +77,9 @@ app.post('/predict', (req, res) => {
     // Handle the end of the Python script execution
     pythonProcess.on('close', (code) => {
       if (code === 0) {
-        // Successful execution
         console.log(result.trim());
         res.render("crop",{prediction:result, userValues:userValues });
       } else {
-        // Error in execution
         console.log("Error in Python script execution");
         res.status(500).send('Error in Python script execution');
       }
@@ -91,6 +92,14 @@ app.post('/predict', (req, res) => {
 
 app.post("/crop", (req,res)=>{
   res.render("crop",{prediction:" "});
+})
+
+app.post("/userManual", (req,res)=>{
+    res.render("userManual");
+})
+
+app.post("/about", (req,res)=>{
+    res.render("about");
 })
 
 
