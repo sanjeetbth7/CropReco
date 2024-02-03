@@ -19,10 +19,17 @@ body {
   background-repeat: no-repeat;
   background-position: center;   
   }
+
+  .tagline {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 5px;
+}
   
   .content{
     display: flex;
-    margin-top: 25px;
+    margin-top: 20px;
   }
   .container {
     display: flex;
