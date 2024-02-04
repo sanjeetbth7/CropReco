@@ -5,14 +5,19 @@ import ejs from "ejs";
 import dotenv from "dotenv";
 
 
+import mongoose from "mongoose";
+
 import { spawn } from "child_process";
 
+mongoose.set('strictQuery', true);
+mongoose.connect("mongodb://127.0.0.1:27017/cropDB").then(() => {
+    console.log("Connected to the database!");
+});
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
 
 dotenv.config();
 const PORT = 3000;
@@ -25,6 +30,30 @@ app.set('strict routing', true);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));  
+
+// crop schema for store data in mongoDB
+const cropSchema = new mongoose.Schema({
+    name : String,
+    steps : {
+        Land_Preparation: String,
+        Soil_Testing: String,
+        Seed_Selection: String,
+        Sowing: String,
+        Irrigation: String,
+        Weed_Control: String,
+        Fertilization: String,
+        Disease_and_Pest_Management: String,
+        Crop_Monitoring: String,
+        Harvesting: String,
+        Drying_and_Storage:String
+      },
+    cost : String
+});
+
+const Crop = mongoose.model("Crop",cropSchema );
+
+
+  
 
 
 
@@ -53,6 +82,55 @@ app.get("/about", (req,res)=>{
 app.get("/crop", (req,res)=>{
     res.render("crop",{prediction:" ",userValues:""});
 })
+
+// only to fill crop data
+app.get("/form", (req,res)=>{
+    res.render("form");
+})
+
+app.post("/formSubmit", (req,res)=>{
+    const inputCrop = req.body;
+
+    const crop = new Crop({
+        name : inputCrop.cropName, 
+        steps : {
+            Land_Preparation: inputCrop.Land_Preparation,
+            Soil_Testing: inputCrop.Soil_Testing,
+            Seed_Selection: inputCrop.Seed_Selection,
+            Sowing: inputCrop.Sowing,
+            Irrigation: inputCrop.Irrigation,
+            Weed_Control: inputCrop.Weed_Control,
+            Fertilization: inputCrop.Fertilization,
+            Disease_and_Pest_Management: inputCrop.Disease_and_Pest_Management,
+            Crop_Monitoring: inputCrop.Crop_Monitoring,
+            Harvesting: inputCrop.Harvesting,
+            Drying_and_Storage:inputCrop.Drying_and_Storage
+          },
+        cost : inputCrop.cost
+    });
+
+    crop.save();
+    res.render("form");
+
+})
+
+app.get("/processCultivation/:cropName", async (req, res) => {
+    try {
+      const reqCrop = req.params.cropName.toLowerCase(); // Convert to lowercase
+  
+      // Use the await keyword to wait for the Promise to resolve
+      const foundCrop = await Crop.find({ name: { $regex: new RegExp("^" + reqCrop, "i") } });
+    //   console.log(foundCrop[0].name, reqCrop);
+      res.render("cropCultivation", { crop: foundCrop[0] });
+    } catch (err) {
+      // Handle the error appropriately
+      console.error("Error querying database:", err);
+      res.status(500).send("Internal Server Error");
+    }
+  });
+  
+  
+
 
 
 /* Connecting Backend with ML model */
