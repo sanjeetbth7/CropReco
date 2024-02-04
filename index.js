@@ -9,18 +9,26 @@ import mongoose from "mongoose";
 
 import { spawn } from "child_process";
 
+dotenv.config();
 mongoose.set('strictQuery', true);
-mongoose.connect("mongodb://127.0.0.1:27017/cropDB").then(() => {
-    console.log("Connected to the database!");
+// mongoose.connect("mongodb://127.0.0.1:27017/cropDB").then(() => {
+//     console.log("Connected to the database!");
+// });
+
+const uri = process.env.databaseURL;
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+  console.log("Connected to the database!");
 });
+
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-dotenv.config();
-const PORT = 3000;
+
+const PORT =process.env.PORT || 4400;
 const app = express();
 
 app.set('view engine', 'ejs');
