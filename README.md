@@ -2,8 +2,8 @@
 
 CropReco is an innovative agricultural solution designed to revolutionize traditional farming practices by providing personalized and data-driven recommendations for crop cultivation. Leveraging advanced technologies, including machine learning algorithms and Internet of Things (IoT) devices, CropReco empowers farmers with precise insights and suggestions to optimize yield and profitability while promoting sustainable farming practices.
 
+<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/logo.png" alt="CropReco Logo" width="150" height="150">
 
-![CropReco Logo](https://github.com/sanjeetbth7/CropReco/blob/master/public/images/logo.png)
 
 ## Team Members ( Infinite Void )
 - **Vishal Kumar Patel** 
@@ -101,5 +101,5 @@ By addressing these challenges and leveraging advanced technologies, FASAL SUJHA
 
 CropReco is not just a tool; it's a comprehensive solution that aims to make agriculture smarter, more efficient, and environmentally sustainable. By integrating cutting-edge technologies with agricultural expertise, CropReco empowers farmers to thrive in an ever-changing agricultural landscape.
 
-##Demo video
-[!Demo video (https://www.youtube.com/watch?v=zPcmilw_NC0)]
+## Demo video
+[! Demo video ](https://www.youtube.com/watch?v=zPcmilw_NC0)
