@@ -1,6 +1,6 @@
 :root{
   --primary-bgcolor:rgb(230 230 230);
-  --nav-bgcolor:rgb(105 149 74);
+  --nav-bgcolor:rgb(149 185 124 / 56%);
   --primary-text-color:#f0f0f0e0;
   --form-border-color1:#ccc;
   --form-bgcolor:#fff;
@@ -66,8 +66,15 @@ body {
   }
   
   .brand {
+    padding: 0;
+    margin: 0;
     font-size: 24px;
     font-weight: bold;
+  }
+
+  .brand>img{
+    width: 50px;
+    border-radius: 50%;
   }
   .left{
     display: flex;

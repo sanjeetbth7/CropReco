@@ -11,10 +11,13 @@ import { spawn } from "child_process";
 
 dotenv.config();
 mongoose.set('strictQuery', true);
+
+// Local database
 // mongoose.connect("mongodb://127.0.0.1:27017/cropDB").then(() => {
 //     console.log("Connected to the database!");
 // });
 
+// MongoDB atlas database
 const uri = process.env.databaseURL;
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
