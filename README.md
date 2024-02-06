@@ -10,6 +10,8 @@ CropReco is an innovative agricultural solution designed to revolutionize tradit
 - **Sanjeet Kumar**     
 - **Ved Anand** 
 - **Twisha Talukder**
+
+
 ![Team_member](https://github.com/sanjeetbth7/CropReco/blob/master/public/images/team.png)
 
 ### Here we have used : 
@@ -105,8 +107,6 @@ CropReco is not just a tool; it's a comprehensive solution that aims to make agr
 
 [![Watch the video](https://img.youtube.com/vi/zPcmilw_NC0/0.jpg)](https://www.youtube.com/watch?v=zPcmilw_NC0)
 
-
-</iframe>
 
 # Screenshots
 * HOMEPAGE
