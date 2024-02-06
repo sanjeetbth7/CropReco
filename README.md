@@ -10,7 +10,7 @@ CropReco is an innovative agricultural solution designed to revolutionize tradit
 - **Sanjeet Kumar**     
 - **Ved Anand** 
 - **Twisha Talukder**
-![Team_member](https://github.com/sanjeetbth7/CropReco/blob/master/public/images/team.jpg)
+![Team_member](https://github.com/sanjeetbth7/CropReco/blob/master/public/images/team.png)
 
 ### Here we have used : 
 - Frontend : HTML, CSS, javaScript, ejs  along with figma design
@@ -103,3 +103,13 @@ CropReco is not just a tool; it's a comprehensive solution that aims to make agr
 
 ## Demo video
 [! Demo video ](https://www.youtube.com/watch?v=zPcmilw_NC0)
+
+# Screenshots
+* HOMEPAGE
+<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/logo.png" alt="Home Page" width="50%" >
+
+* Prediction form
+<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/prediction_form.png" alt="prediction form" width="50%" >
+
+* Prediction
+<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/prediction.png" alt="Prediction" width="50%" >
