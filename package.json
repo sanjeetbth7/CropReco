@@ -5,7 +5,7 @@
   "description": "\"This is a Crop Recommendation website which uses ML model and suggest crop on the basis on soil type and quality.\"",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "author": "\"Sanjeet Kumar, Ved Anand, Vishal Kumar and Twisha\"",
   "license": "ISC",
