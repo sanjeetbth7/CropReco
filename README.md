@@ -110,10 +110,10 @@ CropReco is not just a tool; it's a comprehensive solution that aims to make agr
 
 # Screenshots
 * HOMEPAGE
-<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/home.png" alt="Home Page" width="50%" >
+<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/home.png" alt="Home Page" width="90%" >
 
 * Prediction form
-<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/predict_form.png" alt="prediction form" width="50%" >
+<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/predict_form.png" alt="prediction form" width="90%" >
 
 * Prediction
-<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/prediction.png" alt="Prediction" width="50%" >
+<img src="https://github.com/sanjeetbth7/CropReco/blob/master/public/images/prediction.png" alt="Prediction" width="90%" >
